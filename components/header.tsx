@@ -10,15 +10,17 @@ export default function ResponsiveAppBar() {
   const [activeItem, setActiveItem] = useState(path);
   const menuItems = [{key:"Home",value:"/"}, {key:"About",value:"/about"}, {key:"Career",value:"/career"}];
 
-  useEffect(()=>{
-    
-  },[])
+
+  useEffect(() => {
+    setActiveItem(path);
+  }, [path]);
+
 
   return (
     <nav className="bg-gradient-to-r from-[#1e3a8a] via-[#2563eb] to-[#38bdf8] bg-opacity-90 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
       <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
         {/* Logo */}
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src="https://www.matrixstride.com/images/logo-matrixstride.png"
             alt="Logo"
@@ -27,7 +29,7 @@ export default function ResponsiveAppBar() {
             priority
             className="h-12 w-auto transition-transform duration-300 hover:scale-105"
           />
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-2">

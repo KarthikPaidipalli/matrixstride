@@ -58,10 +58,10 @@ export default function Footer() {
             <div>
               <Typography variant="h6" className="text-black text-lg font-semibold mb-4">Follow Us</Typography>
               <Box className="flex gap-4">
-                <IconButton href="#" aria-label="Facebook" className="text-gray-600 hover:text-blue-500">
+                <IconButton  aria-label="Facebook" className="text-gray-600 hover:text-blue-500">
                   <Facebook />
                 </IconButton>
-                <IconButton href="#" aria-label="Twitter" className="text-gray-600 hover:text-blue-500">
+                <IconButton  aria-label="Twitter" className="text-gray-600 hover:text-blue-500">
                   <Twitter />
                 </IconButton>
                 <IconButton href="https://www.linkedin.com/company/matrixstride/" aria-label="LinkedIn" className="text-gray-600 hover:text-blue-500">

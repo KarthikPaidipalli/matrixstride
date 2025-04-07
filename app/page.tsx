@@ -1,13 +1,18 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="relative bg-white overflow-hidden">
       {/* Background top-right shape */}
       <div className="absolute top-20 right-0 z-0 hidden md:block">
-        <img
+        <Image
           src="https://www.matrixstride.com/images/banner-shape.svg"
           alt="Background shape"
-           className="w-[500px] h-[470px] object-cover"
+          width={500}
+          height={470}
+          className="w-[500px] h-[470px] object-cover"
         />
+
       </div>
 
 
@@ -25,11 +30,14 @@ export default function Home() {
 
         {/* Image section */}
         <div className="w-full md:w-1/2">
-          <img
+          <Image
             src="https://www.matrixstride.com/images/ai-at-nih-900.png"
             alt="AI at NIH"
+            width={900}
+            height={600} 
             className="w-full h-auto"
           />
+
         </div>
       </div>
       {/* Extended engineering section */}
