@@ -1,12 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function ResponsiveAppBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("Home");
-  const menuItems = [{key:"Home",value:"/"}, {key:"About",value:"/about"}, {key:"Contact Us",value:"/contactus"}];
+  const path=usePathname();
+  const [activeItem, setActiveItem] = useState(path);
+  const menuItems = [{key:"Home",value:"/"}, {key:"About",value:"/about"}, {key:"Career",value:"/career"}];
+
+  useEffect(()=>{
+    
+  },[])
 
   return (
     <nav className="bg-gradient-to-r from-[#1e3a8a] via-[#2563eb] to-[#38bdf8] bg-opacity-90 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
@@ -29,7 +35,7 @@ export default function ResponsiveAppBar() {
             <Link
               key={item.key}
               href={item.value}
-              onClick={() => setActiveItem(item.key)}
+              onClick={() => setActiveItem(item.value)}
               className={`px-10 py-2 rounded-lg font-medium relative transition-all duration-300 ${
                 activeItem === item.key
                   ? "text-white font-semibold"
@@ -37,7 +43,7 @@ export default function ResponsiveAppBar() {
               }`}
             >
               {item.key}
-              {activeItem === item.key && (
+              {activeItem === item.value && (
                 <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-white w-4/5 rounded-full"></span>
               )}
             </Link>
@@ -94,11 +100,11 @@ export default function ResponsiveAppBar() {
               key={item.key}
               href={item.value}
               onClick={() => {
-                setActiveItem(item.key);
+                setActiveItem(item.value);
                 setIsOpen(false);
               }}
               className={`block px-6 py-3 text-center text-lg font-medium relative transition-colors duration-200 ${
-                activeItem === item.key
+                activeItem === item.value
                   ? "text-white bg-white/10"
                   : "text-white/80 hover:text-white hover:bg-white/5"
               }`}

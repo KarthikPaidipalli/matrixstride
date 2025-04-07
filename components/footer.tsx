@@ -64,7 +64,7 @@ export default function Footer() {
                 <IconButton href="#" aria-label="Twitter" className="text-gray-600 hover:text-blue-500">
                   <Twitter />
                 </IconButton>
-                <IconButton href="#" aria-label="LinkedIn" className="text-gray-600 hover:text-blue-500">
+                <IconButton href="https://www.linkedin.com/company/matrixstride/" aria-label="LinkedIn" className="text-gray-600 hover:text-blue-500">
                   <LinkedIn />
                 </IconButton>
               </Box>
