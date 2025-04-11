@@ -35,20 +35,25 @@ export default function ResponsiveAppBar() {
         <div className="hidden md:flex space-x-2">
           {menuItems.map((item) => (
             <Link
-              key={item.key}
-              href={item.value}
-              onClick={() => setActiveItem(item.value)}
-              className={`px-10 py-2 rounded-lg font-medium relative transition-all duration-300 ${
-                activeItem === item.key
-                  ? "text-white font-semibold"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-            >
+            key={item.key}
+            href={item.value}
+            onClick={() => setActiveItem(item.value)}
+            className={`px-6 py-2.5 rounded-md font-medium relative transition-all duration-200 ease-in-out ${
+              activeItem === item.key
+                ? "text-white bg-indigo-600 shadow-md hover:bg-indigo-700"
+                : "text-gray-300 hover:text-white hover:bg-gray-700/50"
+            } group`}
+          >
+            <span className="relative z-10 flex items-center justify-center gap-1">
               {item.key}
-              {activeItem === item.value && (
-                <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-white w-4/5 rounded-full"></span>
-              )}
-            </Link>
+            </span>
+            
+            {activeItem === item.value ? (
+              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-white w-3/5 rounded-full"></span>
+            ) : (
+              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white w-0 rounded-full transition-all duration-300 ease-in-out group-hover:w-3/5"></span>
+            )}
+          </Link>
           ))}
         </div>
 
